@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        dockerTool 'my-angular-app'
-    }
-
     environment {
         IMAGE_NAME = 'my-angular-app'
         CONTAINER_NAME = 'exciting_kilby'
