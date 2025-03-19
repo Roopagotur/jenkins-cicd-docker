@@ -16,7 +16,6 @@ pipeline {
             steps {
                 script {
                     sh 'git clone ${REPO_URL} my-angular-app'
-                    sh 'cd my-angular-app'
                 }
             }
         }
