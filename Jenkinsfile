@@ -11,7 +11,13 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    sh 'git clone ${REPO_URL} my-angular-app'
+                    sh '''
+                    if [ -d "my-angular-app" ]; then
+                        echo "Directory exists. Removing..."
+                        rm -rf my-angular-app
+                    fi
+                    git clone ${REPO_URL} my-angular-app
+                    '''
                 }
             }
         }
